@@ -9,7 +9,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // Static files (css, client-side js)
 app.use(express.static(path.join(__dirname, "public")));
-
+app.get("/", (req, res) => {
+  res.redirect("/scan");
+});
 // Route for scanner
 app.get("/scan", (req, res) => {
   res.render("scan");
