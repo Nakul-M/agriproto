@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Scanner - Express + EJS</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>QR Scanner → Redirect</h1>
+      <p class="status">Allow camera access to scan QR codes.</p>
+
+      <div class="controls">
+        <label>
+          Camera:
+          <select id="cameraSelect"></select>
+        </label>
+
+        <label>
+          <input type="checkbox" id="autoRedirect" checked /> Auto-redirect if URL
+        </label>
+
+        <button id="startBtn">Start scanning</button>
+        <button id="stopBtn" class="secondary" disabled>Stop</button>
+        <button id="flashBtn" class="secondary" disabled>Toggle torch</button>
+      </div>
+
+      <div class="overlay">
+        <video id="video" autoplay muted playsinline></video>
+        <div class="scan-box"></div>
+      </div>
+
+      <div class="preview">
+        <div class="badge">Last scan:</div>
+        <div id="lastResult">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback QR library -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  <script src="/scanner.js"></script>
+</body>
+</html>

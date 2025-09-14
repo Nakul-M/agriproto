@@ -1,0 +1,9 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#4f46e5;--muted:#94a3b8}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:#071827;color:#e6eef8}
+.wrap{max-width:900px;margin:20px auto;padding:18px}
+.card{background:rgba(255,255,255,0.05);padding:16px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+video#video{width:100%;border-radius:8px;background:#000}
+.scan-box{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60%;height:40%;border:2px dashed #aaa;border-radius:10px}
+.preview{margin-top:12px;display:flex;gap:12px;align-items:center}
+.badge{background:#222;padding:6px;border-radius:6px;font-family:monospace}
