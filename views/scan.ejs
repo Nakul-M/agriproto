@@ -3,35 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QR Scanner - Express + EJS</title>
+  <title>QR Scanner</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>QR Scanner → Redirect</h1>
-      <p class="status">Allow camera access to scan QR codes.</p>
+      <h1>QR Scanner</h1>
+      <p class="status">Point your camera at a QR code to scan.</p>
 
-      <div class="controls">
-        <label>
-          Camera:
-          <select id="cameraSelect"></select>
-        </label>
+      <!-- Camera Selector -->
+      <label for="cameraSelect">Choose Camera</label>
+      <select id="cameraSelect"></select>
 
-        <label>
-          <input type="checkbox" id="autoRedirect" checked /> Auto-redirect if URL
-        </label>
-
-        <button id="startBtn">Start scanning</button>
-        <button id="stopBtn" class="secondary" disabled>Stop</button>
-        <button id="flashBtn" class="secondary" disabled>Toggle torch</button>
-      </div>
-
+      <!-- Video + Scan Box -->
       <div class="overlay">
         <video id="video" autoplay muted playsinline></video>
         <div class="scan-box"></div>
+        <!-- Camera Button Overlay -->
+        <button id="cameraBtn" class="camera-btn">
+          <i class="fa-solid fa-camera"></i>
+        </button>
       </div>
 
+      <!-- Last Result Preview -->
       <div class="preview">
         <div class="badge">Last scan:</div>
         <div id="lastResult">—</div>
@@ -39,7 +35,7 @@
     </div>
   </div>
 
-  <!-- Fallback QR library -->
+  <!-- QR Library -->
   <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
   <script src="/scanner.js"></script>
 </body>
